@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de HTML</title>
+    <meta name="description" content="Descrição da página.">
+</head>
+<body>
+    <header>
+        <h1>Área de Contato do Cliente</h1>
+        <nav>
+            <a href="#">Ajuda</a> | <a href="#">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Envie sua mensagem para a nossa equipe de suporte backend</h2>
+        
+            <form action="/enviar" method="POST">
+                <fieldset>
+                    <legend>Formulário de Atendimento</legend>
+
+                    <div class="campo">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" minlength="3" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" minlength="5" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="celular">Telefone Celular:</label>
+                        <input type="tel" name="celular" id="celular" required pattern="[0-9]{11}">
+                        </div>
+
+                   <div class="campo">
+                       <label for="msg">Mensagem:</label>
+                       <textarea id="msg" name="msg" rows="5" minlength="10"> </textarea>
+                   </div>
+                   <button type="submit">Enviar Mensagem</button>
+               </fieldset>
+           </form>
+        </article>
+    </main>
+
+    <footer>
+        <p>Suporte Tech 2026</p>
+    </footer>
+</body>
+</html>
