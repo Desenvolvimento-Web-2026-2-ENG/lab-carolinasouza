@@ -4,235 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hub do Portfólio</title>
-    <style>
-        /* Reset básico e fonte */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-            
-            /* CONFIGURAÇÃO DO GRID PRINCIPAL */
-            display: grid;
-            grid-template-columns: 280px 1fr; /* Coluna 1 (Menu): 280px | Coluna 2 (Conteúdo): o resto */
-            grid-template-rows: auto 1fr auto; /* Header | Conteúdo | Footer */
-            grid-template-areas: 
-                "cabecalho cabecalho"
-                "menu      conteudo"
-                "rodape    rodape";
-            min-height: 100vh; /* Ocupa pelo menos 100% da altura da tela */
-            gap: 20px;
-            padding: 20px;
-        }
-
-        /* 1. HEADER OCUPANDO TODA A LARGURA */
-        header {
-            grid-area: cabecalho;
-            background-color: #1e293b;
-            color: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-        }
-
-        header h1 {
-            margin-bottom: 8px;
-        }
-
-        /* 2. MENU PRINCIPAL À ESQUERDA */
-        nav {
-            grid-area: menu;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-        }
-
-        nav h2 {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            color: #1e293b;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 8px;
-        }
-
-        nav ul {
-            list-style-type: none;
-        }
-
-        nav > ul > li {
-            margin-bottom: 12px;
-        }
-
-        nav ul ul {
-            margin-top: 8px;
-            padding-left: 15px;
-            border-left: 2px solid #cbd5e1;
-        }
-
-        nav ul ul li {
-            margin-bottom: 6px;
-        }
-
-        /* 3. TRILHAS DE LABORATÓRIO À DIREITA */
-        main {
-            grid-area: conteudo;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-        }
-
-        main h2 {
-            margin-bottom: 20px;
-            color: #1e293b;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 8px;
-        }
-
-        /* GRID INTERNO PARA AS CAIXINHAS DOS MÓDULOS */
-        .modulos-grid {
-            list-style-type: none;
-            display: grid;
-            /* Cria colunas automáticas com largura mínima de 260px */
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        /* ESTILO DE CADA CAIXINHA (MÓDULO) */
-        .modulo-card {
-            background-color: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-top: 4px solid #3b82f6; /* Detalhe azul no topo */
-            border-radius: 8px;
-            padding: 18px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .modulo-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-
-        .modulo-card strong {
-            display: block;
-            font-size: 1.1rem;
-            color: #1e293b;
-            margin-bottom: 12px;
-        }
-
-        .modulo-card ul {
-            list-style-position: inside;
-        }
-
-        .modulo-card li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        /* Links */
-        a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* 4. FOOTER OCUPANDO TODA A LARGURA */
-        footer {
-            grid-area: rodape;
-            background-color: #1e293b;
-            color: #cbd5e1;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        footer h2 {
-            color: #ffffff;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        /* RESPONSIVIDADE (Celulares e telas menores) */
-        @media (max-width: 768px) {
-            body {
-                grid-template-columns: 1fr;
-                grid-template-areas: 
-                    "cabecalho"
-                    "menu"
-                    "conteudo"
-                    "rodape";
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="pagina">
+        <header class="cabecalho">
+            <h1>Meu Portfólio de Desenvolvedor Web</h1>
+            <p>Bem-vindo ao meu centralizador de estudos, comandos e laboratórios.</p>
+        </header>
 
-    <header>
-        <h1>Meu Portfólio de Desenvolvedor Web</h1>
-        <p>Bem-vindo ao meu centralizador de estudos, comandos e laboratórios.</p>
-    </header>
-
-    <!-- COLUNA 1: MENU À ESQUERDA -->
-    <nav>
-        <h2>Menu Principal</h2>
-        <ul>
-            <li><strong>Início (Você está aqui)</strong></li>
-            <li><a href="referencias.html">Material de Referência HTML</a></li>
-            <li>Registros de Sala de Aula (Markdown):
+        <aside class="barra-lateral">
+            <nav>
+                <h2>Menu Principal</h2>
                 <ul>
-                    <li><a href="docs/semana-01.html">Registro da Prática 01</a></li>
-                    <li><a href="docs/comandos-git.html">Guia de Comandos Git</a></li>
+                    <li><strong>Início (Você está aqui)</strong></li>
+                    <li><a href="referencias.html">Material de Referência HTML</a></li>
+                    <li>Registros de Sala de Aula (Markdown):
+                        <ul>
+                            <li><a href="docs/semana-01.html">Registro da Prática 01</a></li>
+                            <li><a href="docs/comandos-git.html">Guia de Comandos Git</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-        </ul>
-    </nav>
+            </nav>
+        </aside>
 
-    <!-- COLUNA 2: TRILHAS DE LABORATÓRIO -->
-    <main>
-        <h2>Trilhas de Laboratório</h2>
-        <ol class="modulos-grid">
-            <li class="modulo-card">
-                <strong>Módulo 1: Estrutura (HTML)</strong>
-                <ul>
-                    <li><a href="labs/laboratorio-01.html">Lab 01 - Hello World e Tags Básicas</a></li>
-                    <li><a href="labs/laboratorio-02.html">Lab 02 - Listas Ordenadas e Não Ordenadas</a></li>
-                    <li><a href="labs/laboratorio-03.html">Lab 03 - Estruturação de Tabelas</a></li>
-                    <li><a href="labs/lab-04/lab-04.html">Lab 04 - Formulários</a></li>
-                </ul>
-            </li>
-            <li class="modulo-card">
-                <strong>Módulo 2: Estilização (CSS)</strong>
-                <ul>
-                    <li><a href="labs/04/index.html">Lab 06 - Introdução ao CSS</a></li>
-                    <li><a href="labs/05/index.html">Lab 07 - Seletores e Propriedades</a></li>
-                    <li><a href="labs/06/index.html">Lab 08 - Layouts Responsivos</a></li>
-                </ul>
-            </li>
-            <li class="modulo-card">
-                <strong>Módulo 3: Interatividade (JavaScript)</strong>
-                <ul>
-                    <li><a href="labs/07/index.html">Lab 09 - Manipulação do DOM</a></li>
-                    <li><a href="labs/08/index.html">Lab 10 - Eventos e Funções</a></li>
-                    <li><a href="labs/09/index.html">Lab 11 - Validação de Formulários</a></li>
-                </ul>
-            </li>
-        </ol>
-    </main>
+        <main class="conteudo">
+            <h2>Trilhas de Laboratório</h2>
+            <section class="grade-cards">
+                <article class="card">
+                    <h3>Módulo 1: Estrutura (HTML)</h3>
+                    <ul>
+                        <li><a href="labs/laboratorio-01.html">Lab 01 - Hello World e Tags Básicas</a></li>
+                        <li><a href="labs/laboratorio-02.html">Lab 02 - Listas Ordenadas e Não Ordenadas</a></li>
+                        <li><a href="labs/laboratorio-03.html">Lab 03 - Estruturação de Tabelas</a></li>
+                        <li><a href="labs/lab-04/lab-04.html">Lab 04 - Formulários</a></li>
+                    </ul>
+                </article>
 
-    <footer>
-        <h2>Status do projeto</h2>
-        <p>Este site consolida tanto as implementações práticas (HTML) quanto documentação técnica (Markdown) elaborada durante as aulas.</p>
-    </footer>
+                <article class="card">
+                    <h3>Módulo 2: Estilização (CSS)</h3>
+                    <ul>
+                        <li><a href="labs/04/index.html">Lab 06 - Introdução ao CSS</a></li>
+                        <li><a href="labs/05/index.html">Lab 07 - Seletores e Propriedades</a></li>
+                        <li><a href="labs/06/index.html">Lab 08 - Layouts Responsivos</a></li>
+                    </ul>
+                </article>
 
+                <article class="card">
+                    <h3>Módulo 3: Interatividade (JavaScript)</h3>
+                    <ul>
+                        <li><a href="labs/07/index.html">Lab 09 - Manipulação do DOM</a></li>
+                        <li><a href="labs/08/index.html">Lab 10 - Eventos e Funções</a></li>
+                        <li><a href="labs/09/index.html">Lab 11 - Validação de Formulários</a></li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+
+        <footer class="rodape">
+            <h2>Status do projeto</h2>
+            <p>Este site consolida tanto as implementações práticas (HTML) quanto documentação técnica (Markdown) elaborada durante as aulas.</p>
+        </footer>
+    </div>
 </body>
 </html>
