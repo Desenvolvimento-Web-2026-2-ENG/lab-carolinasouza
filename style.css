@@ -1,0 +1,119 @@
+/*Variáveis globais de estilo*/
+:root {
+    --cor-primaria: #1e3a8a;
+    --cor-fundo: #f1f5f9;
+    --cor-superficie: #ffffff;
+    --cor-texto: #1e293b;
+    --cor-borda: #cbd5e1;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/*Grid Principal*/
+.pagina {
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    grid-template-columns: 320px 1fr; /* Barra lateral fixa à esquerda | Conteúdo à direita */
+    grid-template-rows: auto 1fr auto;
+    gap: 1.5rem;
+    grid-template-areas:
+        "header  header"
+        "aside   main"
+        "footer  footer";
+}
+
+/*Mapeamento das Áreas*/
+.cabecalho {
+    grid-area: header;
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 1.5rem;
+}
+
+.cabecalho h1,
+.cabecalho p {
+    margin: 0;
+}
+
+.cabecalho p {
+    margin-top: 0.5rem;
+    color: #e2e8f0;
+}
+
+.barra-lateral {
+    grid-area: aside;
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.conteudo {
+    grid-area: main;
+}
+
+.rodape {
+    grid-area: footer;
+    background-color: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+/*Conteúdo Principal*/
+.card {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.card h2 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+}
+
+/* Links e Listas */
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul, ol {
+    padding-left: 1.25rem;
+}
+
+li {
+    margin-bottom: 0.4rem;
+}
+
+/*Responsividade para telas menores*/
+@media (max-width: 768px) {
+    .pagina {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "header"
+            "aside"
+            "main"
+            "footer";
+    }
+}
