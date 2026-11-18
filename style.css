@@ -98,7 +98,7 @@ a:hover {
 }
 
 .barra-lateral ul,
-.barra-lateral ul li {
+.barra-lateral ul ul {
     list-style: none;
     list-style-type: none;
 }
