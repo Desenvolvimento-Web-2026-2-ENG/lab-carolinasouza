@@ -4,59 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hub do Portfólio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Meu Portfólio de Desenvolvedor Web</h1>
-        <p>Bem-vindo ao meu centralizador de estudos, comandos e laboratórios.</p>
-    </header>
+    <div class="pagina">
+        <header class="cabecalho">
+            <h1>Meu Portfólio de Desenvolvedor Web</h1>
+            <p>Bem-vindo ao meu centralizador de estudos, comandos e laboratórios.</p>
+        </header>
 
-    <hr>
+        <aside class="barra-lateral">
+            <nav>
+                <h2>Menu Principal</h2>
+                <ul>
+                    <li><strong>Início (Você está aqui)</strong></li>
+                    <li><a href="referencias.html">Material de Referência HTML</a></li>
+                    <li>Registros de Sala de Aula (Markdown):
+                        <hr>
+                        <ul>
+                            <li><a href="docs/semana-01.html">Registro da Prática 01</a></li>
+                            <li><a href="docs/comandos-git.html">Guia de Comandos Git</a></li>
+                        </ul>
+                    </li>
+                    <li>Trilhas de Laboratório:
+                        <hr>
+                        <ol>
+                            <li><strong>Módulo 1: Estrutura (HTML)</strong>
+                                <ul>
+                                    <li><a href="labs/laboratorio-01.html">Lab 01 - Hello World e Tags Básicas</a></li>
+                                    <li><a href="labs/laboratorio-02.html">Lab 02 - Listas Ordenadas e Não Ordenadas</a></li>
+                                    <li><a href="labs/laboratorio-03.html">Lab 03 - Estruturação de Tabelas</a></li>
+                                    <li><a href="labs/lab-04/lab-04.html">Lab 04 - Formulários</a></li>
+                                </ul>
+                            </li>
+                            <li><strong>Módulo 2: Estilização (CSS)</strong>
+                                <ul>
+                                    <li><a href="labs/04/index.html">Lab 06 - Introdução ao CSS</a></li>
+                                    <li><a href="labs/05/index.html">Lab 07 - Seletores e Propriedades</a></li>
+                                    <li><a href="labs/06/index.html">Lab 08 - Layouts Responsivos</a></li>
+                                </ul>
+                            </li>
+                            <li><strong>Módulo 3: Interatividade (JavaScript)</strong>
+                                <ul>
+                                    <li><a href="labs/07/index.html">Lab 09 - Manipulação do DOM</a></li>
+                                    <li><a href="labs/08/index.html">Lab 10 - Eventos e Funções</a></li>
+                                    <li><a href="labs/09/index.html">Lab 11 - Validação de Formulários</a></li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
 
-    <nav>
-    <h2>Menu Principal</h2>
-    <ul>
-        <li>Início (Você está aqui)</li>
-        <li><a href="referencias.html">Material de Referência HTML</a></li>
-        <li>Registros de Sala de Aula (Markdown):
-            <ul>
-                <li><a href="docs/semana-01.html">Registro da Prática 01</a></li>
-                <li><a href="docs/comandos-git.html">Guia de Comandos Git</a></li>
-            </ul>
-        </li>
-        <li>Trilhas de Laboratório:
-            <ol>
-                <li><strong>Módulo 1: Estrutura (HTML)</strong>
-                    <ul>
-                        <li><a href="labs/laboratorio-01.html">Lab 01 - Hello World e Tags Básicas</a></li>
-                        <li><a href="labs/laboratorio-02.html">Lab 02 - Listas Ordenadas e Não Ordenadas</a></li>
-                        <li><a href="labs/laboratorio-03.html">Lab 03 - Estruturação de Tabelas</a></li>
-                        <li><a href="labs/lab-04/lab-04.html">Lab 04 - Formulários</a></li>
-                    </ul>
-                </li>
-                <li><strong>Módulo 2: Estilização (CSS)</strong>
-                    <ul>
-                        <li><a href="labs/04/index.html">Lab 06 - Introdução ao CSS</a></li>
-                        <li><a href="labs/05/index.html">Lab 07 - Seletores e Propriedades</a></li>
-                        <li><a href="labs/06/index.html">Lab 08 - Layouts Responsivos</a></li>
-                    </ul>
-                </li>
-                <li><strong>Módulo 3: Interatividade (JavaScript)</strong>
-                    <ul>
-                        <li><a href="labs/07/index.html">Lab 09 - Manipulação do DOM</a></li>
-                        <li><a href="labs/08/index.html">Lab 10 - Eventos e Funções</a></li>
-                        <li><a href="labs/09/index.html">Lab 11 - Validação de Formulários</a></li>
-                    </ul>
-                </li>
-            </ol>
-        </li>
-    </ul>
-</nav>
+        <main class="conteudo">
+            <section class="card">
+                <h2>Bem-vindo ao Portfólio</h2>
+                <p>Este espaço reúne as entregas práticas realizadas ao longo da disciplina.</p>
+            </section>
+        </main>
 
-    <footer>
-        <hr>
-        <h1>Status do projeto</h1>
-        <p>Este site consolida tanto as implementações práticas (HTML) quanto documentação técnica (Markdown) elaborada durante as aulas.</p>
-    </footer>
+        <footer class="rodape">
+            <h2>Status do projeto</h2>
+            <p>Este site consolida tanto as implementações práticas (HTML) quanto documentação técnica (Markdown) elaborada durante as aulas.</p>
+        </footer>
+    </div>
 </body>
 </html>
