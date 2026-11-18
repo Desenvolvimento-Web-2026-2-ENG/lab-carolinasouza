@@ -27,7 +27,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     min-height: 100vh;
-    grid-template-columns: 320px 1fr; /* Barra lateral fixa à esquerda | Conteúdo à direita */
+    grid-template-columns: 320px 1fr;
     grid-template-rows: auto 1fr auto;
     gap: 1.5rem;
     grid-template-areas:
