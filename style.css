@@ -97,7 +97,16 @@ a:hover {
     text-decoration: underline;
 }
 
-ul, ol {
+barra-lateral ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.barra-lateral ul ul {
+    padding-left: 1rem;
+}
+
+ol {
     padding-left: 1.25rem;
 }
 
