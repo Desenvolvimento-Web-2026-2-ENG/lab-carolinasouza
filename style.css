@@ -64,7 +64,7 @@ body {
     border: 1px solid var(--cor-borda);
     border-radius: 8px;
     padding: 1.5rem;
-    align-self: start; /* Evita que a barra lateral estique até o rodapé */
+    align-self: start;
 }
 
 .conteudo {
@@ -132,7 +132,7 @@ a:hover {
     color: var(--cor-texto-suave);
 }
 
-/* Sublista de Registros (sem bolinhas) */
+/* Sublista de Registros */
 .barra-lateral ul ul {
     list-style: none;
     padding-left: 0.5rem;
@@ -144,7 +144,7 @@ a:hover {
     margin-top: 0.5rem;
 }
 
-/* Sublista de Laboratórios dentro dos Módulos (com bolinhas) */
+/* Sublista de Laboratórios dentro dos Módulos */
 .barra-lateral ol ul {
     list-style-type: disc;
     padding-left: 1.25rem;
