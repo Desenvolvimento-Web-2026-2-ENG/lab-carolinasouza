@@ -1,25 +1,42 @@
-onst LIMITE = 100;
+const LIMITE = 100;
 let itens = [];
 
-let total = 0;
-
 class Item {
-  constructor(nome, preco, quantidade) {
-    this.nome = nome;
-    this.preco = preco;
-    this.quantidade = quantidade;
-  }
+    constructor(nome, preco, quantidade) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
+    getSubtotal() {
+        return this.preco * this.quantidade;
+    }
 }
 
 function adicionarItem(nome, preco, quantidade) {
-    nomeItem = nome;
-    precoItem = preco;
-    quantidadeItem = quantidade;
-
-
-    total += precoItem * quantidadeItem;
+    itens.push(new Item(nome, preco, quantidade));
+    atualizarListaTela();
 }
 
+function desfazerUltimo() {
+    itens.pop();
+    atualizarListaTela();
+}
+
+function limparLista() {
+    itens = [];
+    atualizarListaTela();
+}
+
+function calcularTotal() {
+    let soma = 0;
+
+    for (const item of itens) {
+        soma += item.getSubtotal();
+    }
+
+    return soma;
+}
 
 function verificarOrcamento(total) {
     if (total > LIMITE) {
@@ -29,16 +46,43 @@ function verificarOrcamento(total) {
     }
 }
 
+function atualizarListaTela() {
+    const listaTela = document.getElementById("lista");
+    const statusListaTela = document.getElementById("status-orcamento");
 
-btnAdicionar = document.querySelector("#btn-adicionar");
+    listaTela.innerHTML = "";
 
-
-btnAdicionar.addEventListener("click", function () {
-    const nome = document.getElementById("nome").value;
-    const preco = parseFloat(document.getElementById("preco").value);
-    const quantidade = parseInt(document.getElementById("quantidade").value);
-
-    adicionarItem(nome, preco, quantidade);
-    const mensagem = verificarOrcamento(total);
-    console.log(mensagem);
+    itens.forEach((item) => {
+    const itemListaTela = document.createElement("li");
+    itemListaTela.textContent = `${item.nome} - ${item.quantidade}x R$ ${item.preco.toFixed(2)}`;
+    listaTela.appendChild(itemListaTela);
 });
+
+    const total = calcularTotal();
+
+    document.getElementById("qtd-itens").textContent = itens.length;
+    document.getElementById("total").textContent = `R$ ${total.toFixed(2)}`;
+    document.getElementById("saldo").textContent = `R$ ${(LIMITE - total).toFixed(2)}`;
+    statusListaTela.textContent = verificarOrcamento(total);
+
+    if (total > LIMITE) {
+        statusListaTela.classList.add("alerta");
+    } else {
+        statusListaTela.classList.remove("alerta");
+    }
+}
+
+document.getElementById("btn-adicionar").addEventListener("click", () => {
+    const inputNome = document.getElementById("nome");
+    const inputPreco = document.getElementById("preco");
+    const inputQtd = document.getElementById("quantidade");
+
+    adicionarItem(inputNome.value,parseFloat(inputPreco.value),parseInt(inputQtd.value));
+
+    inputNome.value = "";
+    inputPreco.value = "";
+    inputQtd.value = "";
+});
+
+document.getElementById("btn-desfazer").addEventListener("click", desfazerUltimo);
+document.getElementById("btn-limpar").addEventListener("click", limparLista);
